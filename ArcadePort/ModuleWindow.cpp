@@ -1,8 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleWindow.h"
-#include "JsonDoc.h"
-#include "Parson\parson.h"
+
 
 ModuleWindow::ModuleWindow(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -29,8 +28,7 @@ bool ModuleWindow::Init()
 	}
 	else
 	{
-		//Create window
-		Load(App->config.GetObj(name));
+
 		Uint32 flags = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN;
 
 		//Use OpenGL 2.1
@@ -94,7 +92,7 @@ update_status ModuleWindow::Update(float dt)
 
 	if (!resized && fullscreen)
 	{
-		App->renderer3D->OnResize(DM.w, DM.h);
+		//App->renderer3D->OnResize(DM.w, DM.h);
 		SDL_SetWindowSize(window, DM.w * SCREEN_SIZE, DM.h * SCREEN_SIZE);
 		SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
 		resized = true;
@@ -102,7 +100,7 @@ update_status ModuleWindow::Update(float dt)
 
 	if (!resized && full_desktop)
 	{
-		App->renderer3D->OnResize(DM.w, DM.h);
+		//App->renderer3D->OnResize(DM.w, DM.h);
 		SDL_SetWindowSize(window, DM.w * SCREEN_SIZE, DM.h * SCREEN_SIZE);
 		SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 		resized = true;
@@ -134,34 +132,7 @@ void ModuleWindow::SetTitle(const char* title)
 
 
 
-bool ModuleWindow::Load(json_object_t* doc)
-{
 
-	w = App->config.GetObjValueInt(doc, "Width");
-	h = App->config.GetObjValueInt(doc, "Height");
-	brightness = App->config.GetObjValueFloat(doc, "Brightness");
-	res = App->config.GetObjValueBool(doc, "Resizable");
-	bord = App->config.GetObjValueBool(doc, "Borderless");
-	FS = App->config.GetObjValueBool(doc, "Fullscreen");
-	FSWin = App->config.GetObjValueBool(doc, "Fullscreen Window");
-
-	return true;
-}
-
-bool ModuleWindow::Save(json_object_t* doc)
-{
-	JSON_Status error; 
-
-	error = json_object_dotset_number(doc, "Window.Width", w);
-	error = json_object_dotset_number(doc, "Window.Height", h);
-	error = json_object_dotset_number(doc, "Window.Brightness", brightness);
-	error = json_object_dotset_boolean(doc, "Window.Resizable", res);
-	error = json_object_dotset_boolean(doc, "Window.Borderless", bord);
-	error = json_object_dotset_boolean(doc, "Window.Fullscreen", FS);
-	error = json_object_dotset_boolean(doc, "Window.Fullscreen Window", FSWin);
-
-	return !error;
-}
 
 void ModuleWindow::SetBools()
 {

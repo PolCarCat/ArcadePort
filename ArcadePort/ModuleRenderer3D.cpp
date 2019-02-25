@@ -2,8 +2,6 @@
 #include "Application.h"
 #include "ModuleRenderer3D.h"
 #include "ModuleWindow.h"
-#include "JsonDoc.h"
-
 
 #include "Glew/include/glew.h"
 #include "SDL\include\SDL_opengl.h"
@@ -31,8 +29,7 @@ bool ModuleRenderer3D::Init()
 	VSLOG("Creating 3D Renderer context");
 	bool ret = true;
 	
-	//Load from config
-	Load(App->config.GetObj(name));
+
 
 	
 	//Setting attributes
@@ -71,12 +68,6 @@ bool ModuleRenderer3D::Init()
 // PreUpdate: clear buffer
 update_status ModuleRenderer3D::PreUpdate(float dt)
 {
-	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	//glLoadIdentity();
-
-	//glMatrixMode(GL_MODELVIEW);
-	//glLoadMatrixf(App->camera->GetViewMatrix());
-
 
 	return UPDATE_CONTINUE;
 }
@@ -99,19 +90,6 @@ bool ModuleRenderer3D::CleanUp()
 	return true;
 }
 
-
-void ModuleRenderer3D::OnResize(int width, int height)
-{
-	//glViewport(0, 0, width, height);
-
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-	//ProjectionMatrix = perspective(60.0f, (float)width / (float)height, 0.125f, 512.0f);
-	//glLoadMatrixf(&ProjectionMatrix);
-
-	//glMatrixMode(GL_MODELVIEW);
-	//glLoadIdentity();
-}
 
 
 

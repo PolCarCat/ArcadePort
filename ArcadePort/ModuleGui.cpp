@@ -33,13 +33,7 @@ bool ModuleGui::Start()
 	issues_link = "https://github.com/PolCarCat/3D--Engine/issues";
 
 
-	config = new WinConfig(App, true);
-	AddWindow(config);
 
-
-	for (std::list<WinBase*>::iterator item = windows.begin(); item != windows.end(); item++) {
-		(*item)->Start();
-	}
 
 	return true;
 }
@@ -59,55 +53,8 @@ update_status ModuleGui::PreUpdate(float dt)
 
 	ImGui::Separator();
 
-	for (std::list<WinBase*>::iterator item = windows.begin(); item != windows.end(); item++) {
-		if ((*item)->GetEnable())
-		(*item)->Update();
-	}
 
-	/*if (ImGui::BeginMainMenuBar())
-	{
-		if (ImGui::BeginMenu("File"))
-		{
-			if (ImGui::MenuItem("Save"))
-				App->SaveGame();
 
-			if (ImGui::MenuItem("Load"))
-				App->LoadGame();
-
-			if (ImGui::MenuItem("Quit"))
-				quit = true;
-
-			ImGui::EndMenu();
-		}
-
-		if (ImGui::BeginMenu("Help"))
-		{
-			if (ImGui::MenuItem("Show/Hide Gui Demo"))
-				showdemo = !showdemo;
-			if (ImGui::MenuItem("Go to our Wiki"))
-				ShellExecute(NULL, "open", wiki_link, NULL, NULL, SW_SHOWNORMAL);
-			if (ImGui::MenuItem("Download our latest release"))
-				ShellExecute(NULL, "open", release_link, NULL, NULL, SW_SHOWNORMAL);
-			if (ImGui::MenuItem("Report a bug"))
-				ShellExecute(NULL, "open", issues_link, NULL, NULL, SW_SHOWNORMAL);
-			if (ImGui::MenuItem("About"))
-				about = !about;
-
-			ImGui::EndMenu();
-		}
-
-		if (ImGui::BeginMenu("Tools"))
-		{
-			if (ImGui::MenuItem("Configuration"))
-				config_b = !config_b;
-			if (ImGui::MenuItem("Random Number Generator"))
-				rngwindow = !rngwindow;
-
-			ImGui::EndMenu();
-		}
-
-		ImGui::EndMainMenuBar();
-	}*/
 
 	if (about)
 		AboutWindow();
@@ -155,10 +102,7 @@ bool ModuleGui::CleanUp()
 	return true;
 }
 
-void ModuleGui::AddWindow(WinBase* win)
-{
-	windows.push_back(win);
-}
+
 
 void ModuleGui::ShowMenuBar()
 {

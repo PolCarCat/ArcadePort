@@ -1,11 +1,9 @@
 #pragma once
 #include "Module.h"
 #include "Globals.h"
-#include "WinBase.h"
-#include "WinConfig.h"
 #include <list>
 
-#include "pcg-c-basic-0.9/pcg_basic.h"
+
 
 
 class ModuleGui :
@@ -26,10 +24,8 @@ public:
 	bool CleanUp();
 	void ShowMenuBar();
 	void AddLogWindow();
-	void AddWindow(WinBase* win);
 
-public:
-	WinConfig * config;
+
 
 private:
 
@@ -38,9 +34,8 @@ private:
 
 private:
 	bool quit = false;
-	std::list<WinBase*> windows;
 
-	pcg32_random_t rng;
+
 	int random_bounded = 0;
 	int max = 0;
 	int min = 0;

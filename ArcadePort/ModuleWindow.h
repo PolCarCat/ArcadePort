@@ -20,8 +20,7 @@ public:
 
 	bool Init();
 	bool CleanUp();
-	bool Load(json_object_t* doc);
-	bool Save(json_object_t* doc);
+
 
 	void SetTitle(const char* title);
 
@@ -34,8 +33,6 @@ public:
 
 	int w;
 	int h;
-	int last_w;
-	int last_h;
 	float brightness = 1.0f;
 	int refresh_rate;
 	bool res = true;
