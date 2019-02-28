@@ -1,0 +1,120 @@
+<!-- Config file for the game -->
+
+<animations>
+  <player>
+    <animationInfo>
+      <jumping frames="0" duration="6.0f" loop ="0">
+        <frame number="0" x="0" y ="17" w="13" h ="14"/>
+        <frame number="1" x="16" y ="16" w="13" h ="14"/>
+        <frame number="2" x="32" y ="18" w="13" h ="14"/>
+      </jumping>
+      <falling frames="0" duration="0" loop ="0">
+        <frame number="0" x="0" y ="0" w="0" h ="0"/>
+        <frame number="1" x="0" y ="0" w="0" h ="0"/>
+        <frame number="2" x="0" y ="0" w="0" h ="0"/>
+        <frame number="3" x="0" y ="0" w="0" h ="0"/>
+        <frame number="4" x="0" y ="0" w="0" h ="0"/>
+        <frame number="5" x="0" y ="0" w="0" h ="0"/>
+        <frame number="6" x="0" y ="0" w="0" h ="0"/>
+      </falling>
+      <landing frames="0" duration="15.0f" loop ="0">
+        <frame number="0" x="48" y ="0" w="13" h ="14"/>
+        <frame number="1" x="63" y ="0" w="15" h ="14"/>
+        <frame number="2" x="79" y ="0" w="15" h ="14"/>
+        <frame number="3" x="95" y ="0" w="15" h ="14"/>
+        <frame number="4" x="112" y ="0" w="13" h ="14"/>
+      </landing>
+      <walking frames="3" duration="11.0f" loop ="1">
+        <frame number="0" x="0" y ="17" w="13" h ="17" pivot_x="0" pivot_y="-2"/>
+        <frame number="1" x="16" y ="16" w="13" h ="17" pivot_x="0" pivot_y="-3"/>
+        <frame number="2" x="32" y ="18" w="13" h ="17" pivot_x="0" pivot_y="-1"/>
+        <frame number="3" x="48" y ="19" w="12" h ="17" pivot_x="0" pivot_y="0"/>
+        <frame number="4" x="64" y ="17" w="11" h ="17" pivot_x="0" pivot_y="-2"/>
+        <frame number="5" x="80" y ="16" w="13" h ="17" pivot_x="0" pivot_y="-3"/>
+        <frame number="6" x="96" y ="18" w="13" h ="17" pivot_x="0" pivot_y="-1"/>
+        <frame number="7" x="112" y ="19" w="13" h ="17" pivot_x="0" pivot_y="0"/>
+      </walking>
+      <changing frames="0" duration="0" loop ="0">
+        <frame number="0" x="0" y ="0" w="0" h ="0"/>
+        <frame number="1" x="0" y ="0" w="0" h ="0"/>
+        <frame number="2" x="0" y ="0" w="0" h ="0"/>
+        <frame number="3" x="0" y ="0" w="0" h ="0"/>
+        <frame number="4" x="0" y ="0" w="0" h ="0"/>
+        <frame number="5" x="0" y ="0" w="0" h ="0"/>
+        <frame number="6" x="0" y ="0" w="0" h ="0"/>
+      </changing>
+      <idle frames="1" duration="5" loop ="1">
+        <frame number="0" x="0" y ="0" w="13" h ="14"/>
+        <frame number="1" x="16" y ="0" w="13" h ="14"/>
+        <frame number="2" x="32" y ="0" w="13" h ="14"/>
+        <frame number="3" x="48" y ="0" w="13" h ="14" pivot_x ="1"/>
+      </idle>
+    </animationInfo>
+  </player>
+  <Enemies>
+    <ground>
+      <enemyInfo speed="1" gravity="true" />
+      <animationInfo>
+        <idle frames ="1" duration ="0" loop ="1">
+          <frame number="0" x="3" y ="45" w="8" h ="16"/>
+        </idle>
+        <walking frames="3" duration="5.0f" loop ="1">
+          <frame number="0" x="3" y ="45" w="8" h ="16"/>
+        </walking>
+        <alert frames="3" duration="5.0f" loop ="0">
+          <frame number="0" x="18" y ="46" w="10" h ="15"/>
+          <frame number="1" x="34" y ="48" w="10" h ="13"/>
+          <frame number="2" x="50" y ="46" w="10" h ="15"/>
+        </alert>
+      </animationInfo>
+    </ground>
+    <boxer>
+      <enemyInfo speed="1" gravity="true" />
+      <animationInfo>
+        <idle frames ="1" duration ="0" loop ="1">
+          <frame number="0" x="0" y ="62" w="18" h ="18"/>
+        </idle>
+        <walking frames="3" duration="5.0f" loop ="1">
+          <frame number="0" x="0" y ="62" w="18" h ="18"/>
+          <frame number="1" x="19" y ="62" w="19" h ="19"/>
+          <frame number="2" x="39" y ="62" w="21" h ="19"/>
+        </walking>
+        <alert frames="3" duration="20" loop ="0">
+          <frame number="0" x="0" y ="62" w="18" h ="18"/>
+        </alert>
+      </animationInfo>
+    </boxer>
+    <larva>
+      <enemyInfo speed="1" gravity="true" />
+      <animationInfo>
+        <idle frames ="1" duration ="0" loop ="1">
+          <frame number="0" x="3" y ="129" w="45" h ="39"/>
+        </idle>
+        <walking frames="3" duration="2.0f" loop ="1">
+          <frame number="0" x="3" y ="129" w="45" h ="38" pivot_x="0" pivot_y="0"/>
+          <frame number="1" x="50" y ="129" w="46" h ="38" pivot_x="0" pivot_y="0"/>
+          <frame number="0" x="97" y ="129" w="48" h ="38" pivot_x="0" pivot_y="0"/>
+          <frame number="0" x="146" y ="129" w="46" h ="39" pivot_x="0" pivot_y="0"/>
+        </walking>
+        <alert frames="3" duration="5.0f" loop ="0">
+          <frame number="0" x="3" y ="129" w="45" h ="39"/>
+        </alert>
+      </animationInfo>
+    </larva>
+    <air>
+      <enemyInfo speed="1" gravity="false" />
+      <animationInfo>
+        <idle frames ="1" duration ="0" loop ="1">
+          <frame number="0" x="172" y ="82" w="49" h ="38"/>
+        </idle>
+        <walking frames="3" duration="5.0f" loop ="1">
+          <frame number="0" x="172" y ="82" w="49" h ="38"/>
+        </walking>
+        <alert frames="3" duration="5.0f" loop ="0">
+          <frame number="0" x="172" y ="82" w="49" h ="38"/>
+        </alert>
+      </animationInfo>
+    </air>
+  </Enemies>
+  <spritesheet path="textures/Character sprites.png"/>
+</animations>

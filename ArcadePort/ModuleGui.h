@@ -2,9 +2,23 @@
 #include "Module.h"
 #include "Globals.h"
 #include <list>
+#include <string>
 
 
+#include "ImGui/imgui.h"
+#include "ImGui/imgui_impl_sdl.h"
+#include "ImGui/imgui_impl_opengl2.h"
 
+class Game
+{
+
+public:
+	std::string name;
+	std::string directory;
+	std::string description;
+
+	bool focus = false;
+};
 
 class ModuleGui :
 	public Module
@@ -23,29 +37,21 @@ public:
 
 	bool CleanUp();
 	void ShowMenuBar();
-	void AddLogWindow();
+	void UpdateDockSpace();
+	void UpdateMainWindow();
+	void ReadInput(SDL_Event * e) const;
+	void UpdateInput();
 
-
-
-private:
-
-	void AboutWindow();
-	void ConfigWindow();
 
 private:
 	bool quit = false;
+	std::list<Game*> games;
 
+	void SwitchFocusDown();
+	void SwitchFocusUp();
+	void ExecuteFocus();
 
-	int random_bounded = 0;
-	int max = 0;
-	int min = 0;
-	float random_f = 0;
-	char* release_link;
-	char* issues_link;
-	char* wiki_link;
-	bool showdemo = false;
-	bool about = false;
-	bool config_b = false;
-	bool rngwindow = false;
+	std::string directory;
+
 
 };

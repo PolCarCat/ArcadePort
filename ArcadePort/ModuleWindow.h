@@ -31,8 +31,8 @@ public:
 	//The surface contained by the window
 	SDL_Surface* screen_surface;
 
-	int w;
-	int h;
+	int w = 1000;
+	int h = 900;
 	float brightness = 1.0f;
 	int refresh_rate;
 	bool res = true;
@@ -41,6 +41,8 @@ public:
 	bool FSD = false;
 	bool resized = false;
 	bool FSWin = false;
+
+
 	SDL_bool resizable = SDL_TRUE;
 	SDL_bool full_desktop = SDL_FALSE;
 	SDL_bool bordered = SDL_TRUE;

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+	<app framerate_cap="60">
+		<title>Parallax Paradox</title>
+		<organization>MarcoPoloProductions</organization>
+	</app>
+	<renderer>
+		<vsync value="false" />
+	</renderer>
+	<audio volumeFX="0.142405063" volumeMusic="0.240506336" />
+	<window>
+		<resolution width="1024" height="768" scale="1" />
+		<fullscreen value="1" />
+		<borderless value="0" />
+		<resizable value="0" />
+		<fullscreen_window value="1" />
+	</window>
+	<scene>
+		<level name="map1.tmx" />
+		<level name="map2.tmx" />
+		<level name="map3.tmx" />
+		<level name="map4.tmx" />
+	</scene>
+	<file_system>
+		<path>data.zip</path>
+	</file_system>
+	<map>
+		<folder>maps/</folder>
+	</map>
+	<player>
+		<animations>animations.xml</animations>
+	</player>
+	<entities>
+		<animations>animations.xml</animations>
+	</entities>
+</config>

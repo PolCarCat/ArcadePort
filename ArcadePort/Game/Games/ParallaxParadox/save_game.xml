@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<game_state>
+	<input />
+	<window />
+	<textures />
+	<audio volumeFX="0.142405063" volumeMusic="0.240506336" />
+	<map />
+	<scene>
+		<level current_level="4" />
+		<time sec="37.5479012" />
+	</scene>
+	<entities>
+		<position x="179.438965" y="139.354477" />
+		<coins amount="1" />
+	</entities>
+	<collision />
+	<pathfinding />
+	<fonts />
+	<gui />
+	<transition />
+	<renderer>
+		<camera x="-332.561035" y="-244.645523" />
+	</renderer>
+</game_state>
