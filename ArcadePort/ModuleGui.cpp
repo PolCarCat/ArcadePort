@@ -75,6 +75,15 @@ update_status ModuleGui::PreUpdate(float dt)
 	UpdateInput();
 	UpdateMainWindow();
 
+	for (uint i = 0; i < 135; i++)
+	{
+		if (App->input->GetKey(i))
+		{
+			currKey = std::to_string(i);
+			break;
+		}
+	}
+
 
 	return UPDATE_CONTINUE;
 }
@@ -217,6 +226,10 @@ void ModuleGui::UpdateMainWindow()
 		ImGui::PopID();
 		n++;
 	}
+
+	ImGui::Separator();
+
+	ImGui::Text(currKey.c_str());
 
 	ImGui::End();
 

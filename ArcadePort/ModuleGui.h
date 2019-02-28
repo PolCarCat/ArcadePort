@@ -52,6 +52,6 @@ private:
 	void ExecuteFocus();
 
 	std::string directory;
-
+	std::string currKey;
 
 };
